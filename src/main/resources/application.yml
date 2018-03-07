@@ -1,0 +1,11 @@
+server:
+  port: 9000
+  
+my:
+  prop:
+    one: ${MY_PROP_ONE:default_prop1}
+    
+my:
+  prop:
+    two: ${MY_PROP_TWO:}
+  
