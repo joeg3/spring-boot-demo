@@ -36,3 +36,9 @@ bootRun {
 `java -DpropOne=p1 -Dmy.prop.two=p2 -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar`  
 or this  
 `java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar --propOne=p1 --my.prop.two=p2`
+
+## Profile Based Properties
+At the top of `application.yml` are the default properties, and further down are two profiles: test and prod.  To use the properties defined in a profile, you can run the app in these ways  
+* `./gradlew -Dspring.profiles.active=prod bootRun`
+* `java -Dspring.profiles.active=prod -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar`
+* `java -jar build/libs/spring-boot-demo-0.0.1-SNAPSHOT.jar --spring.profiles.active=prod`

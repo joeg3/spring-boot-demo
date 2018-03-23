@@ -21,5 +21,23 @@ endpoints:
   info:
     enabled: true
 
+---
 
+spring:
+    profiles: test
+my:
+  prop:
+    one: ${propOne:defaultProp1Test}
+    two: ${propTwo:defaultProp2Test}
+    three:
+ 
+---
+
+spring:
+    profiles: prod
+my:
+  prop:
+    one: ${propOne:defaultProp1Prod}
+    two: ${propTwo:defaultProp2Prod}
+    three:
     
