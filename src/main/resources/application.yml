@@ -1,11 +1,43 @@
 server:
-  port: 9000
+  port: 9012
   
 my:
   prop:
-    one: ${MY_PROP_ONE:default_prop1}
+    one: ${propOne:defaultProp1}
+    two: ${propTwo:defaultProp2}
+    three:
+
+management:
+  security:
+    enabled: false
+
+endpoints:
+  env:
+    enabled: true
+  health:
+    enabled: true
+  metrics:
+    enabled: true
+  info:
+    enabled: true
+
+---
+
+spring:
+    profiles: test
+my:
+  prop:
+    one: ${propOne:defaultProp1Test}
+    two: ${propTwo:defaultProp2Test}
+    three:
+ 
+---
+
+spring:
+    profiles: prod
+my:
+  prop:
+    one: ${propOne:defaultProp1Prod}
+    two: ${propTwo:defaultProp2Prod}
+    three:
     
-my:
-  prop:
-    two: ${MY_PROP_TWO:}
-  
